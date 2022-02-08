@@ -1,0 +1,48 @@
+package MainUI;
+
+import Users.User;
+
+import javax.swing.*;
+import java.util.Map;
+
+/**
+ * Purpose of this class is to create a UsersScrollPane
+ */
+public class UsersScrollPane extends JScrollPane {
+    public UsersTable usersTable = null;
+    private Map<String, User> usersData = null;
+
+    private static UsersScrollPane usersScrollPane = null;
+
+    private UsersScrollPane(Map<String, User> usersData) {
+        this.usersData = usersData;
+        this.usersTable = new UsersTable(this.usersData);
+        this.setViewportView(this.usersTable);
+    }
+
+    /**
+     * Return a UsersScrollPane with current system style
+     */
+    public static UsersScrollPane getUsersScrollPane(Map<String, User> usersData) {
+        if (usersScrollPane == null) {
+            try {
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                usersScrollPane = new UsersScrollPane(usersData);
+                UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+            } catch (Exception e) {
+                usersScrollPane = new UsersScrollPane(usersData);
+                e.printStackTrace();
+            }
+        }
+        return usersScrollPane;
+    }
+
+    /**
+     * Purpose of this method is to update the UsersScrollPane
+     */
+    public void updateUsersTable() {
+        this.usersTable = new UsersTable(this.usersData);
+        this.setViewportView(usersTable);
+    }
+
+}
