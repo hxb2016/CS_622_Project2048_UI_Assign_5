@@ -25,8 +25,9 @@ public class LoginUI extends JDialog {
     public LoginUIButton startAsGuest;
     public JPanel signInAndUp;
     public JPanel informationArea;
+    private static LoginUI loginUI = null;
 
-    public LoginUI(Frame owner) {
+    private LoginUI(Frame owner) {
         super(owner);
         this.setResizable(false);
         this.setTitle("LoginUI");
@@ -88,6 +89,16 @@ public class LoginUI extends JDialog {
 
         this.add(this.signInAndUp, BorderLayout.SOUTH);
         this.add(this.informationArea, BorderLayout.CENTER);
+    }
+
+    public static LoginUI getLoginUI(Frame owner) {
+        if (loginUI == null) {
+            loginUI = new LoginUI(owner);
+            LoginUIController.setController(loginUI);
+            loginUI.setVisible(true);
+        }
+        return loginUI;
+
     }
 
 }

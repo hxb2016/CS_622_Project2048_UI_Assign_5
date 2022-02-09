@@ -19,7 +19,7 @@ public class UpdateTimerPane {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                App.mainUI.timerPane.setSecond(second + "");
+                App.mainUI.timerPane.setSecond(second + " s");
                 second++;
             }
         }, 0, 1000);

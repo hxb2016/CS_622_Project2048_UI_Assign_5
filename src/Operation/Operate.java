@@ -3,15 +3,9 @@ package Operation;
 import Block.Block;
 import Block.RandomBlock;
 import Game2048_test.App;
-import Tool.OptionPane;
 import MainUI.MainUIBlocksArrayPaneUpdate;
-import IO.SaveUsersData;
 import Tool.UpdateTimerPane;
-import Users.RegisteredUser;
 import Users.User;
-
-import javax.swing.*;
-import java.util.HashMap;
 
 /**
  * The purpose of this class is to deal with moving and combining of block, when the game system receive a command
@@ -63,48 +57,11 @@ public class Operate {
             App.ifEnd = isEnd(currentUser);
         }
 
-        Thread ifEndOrWin = new Thread() {
-            @Override
-            public void run() {
-                if (App.ifEnd) {//if end
-
-                    UpdateTimerPane.endTimer();
-
-                    if (isWin(currentUser.currentBlocksArrayData)) {
-                        currentUser.currentResult = "win";
-                        OptionPane.setJOptionPaneMessage(App.mainUI, "YOU WIN!!!", "Congratulations", null);
-                    } else {
-                        currentUser.currentResult = "fail";
-                        OptionPane.setJOptionPaneMessage(App.mainUI, "GAME OVER!", "Sorry", null);
-                    }
-
-                    int userOption = OptionPane.setJOptionPaneConfirm(App.mainUI, "Save the result?", "Message");
-
-                    if (userOption == JOptionPane.YES_OPTION) {
-                        if (App.usersData == null) {
-                            App.usersData = new HashMap<>();
-                        }
-                        if (currentUser instanceof RegisteredUser) {
-                            ((RegisteredUser) currentUser).setData();//set the data to prepare for saving
-                            App.usersData.put(currentUser.username, currentUser);
-                            try {
-                                SaveUsersData.saveUsersData(App.usersData, App.userDataPath);
-                                App.mainUI.updateLastBestRecord();
-
-                                App.mainUI.usersScrollPane.updateUsersTable();
-
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        } else {
-                            App.loginUI.setVisible(true);
-                        }
-                    }
-                }
-            }
-        };
-
-        ifEndOrWin.start();//Thread start
+        // Create a thread to deal with data after end or win
+        Thread endOrWin = new EndOrWinThread(currentUser);
+        if (App.ifEnd) {//if end
+            endOrWin.start();//Thread start
+        }
 
     }
 

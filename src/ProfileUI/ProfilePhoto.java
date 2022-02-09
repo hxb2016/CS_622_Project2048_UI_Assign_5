@@ -1,25 +1,28 @@
 package ProfileUI;
 
+import Game2048_test.App;
 import Tool.RoundLabel;
+import Users.RegisteredUser;
+import Users.User;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.io.File;
 
 public class ProfilePhoto extends JPanel {
     public RoundLabel roundLabel;
     public JLabel username;
+    public JLabel message;
 
-    public ProfilePhoto() {
-        ImageIcon photo = new ImageIcon("src" + File.separator + "Image" + File.separator + "profile1.png");
-        roundLabel = new RoundLabel(photo.getIconWidth(), photo.getIconWidth());
-        roundLabel.setLayout(new BorderLayout());
-        roundLabel.setIcon(photo);
+    public ProfilePhoto(User user) {
+        if (user == null || ((RegisteredUser) user).photoName.equals("")) {
+            roundLabel = new RoundLabel(App.photosLocation + "profile1.png");
+        } else {
+            roundLabel = new RoundLabel(App.photosLocation + ((RegisteredUser) user).photoName);
+        }
 
-        JLabel message = new JLabel("ProfileUI", SwingConstants.CENTER);
+        message = new JLabel("Profile", SwingConstants.CENTER);
         message.setOpaque(true);
         message.setBackground(new Color(0, 0, 0, 100));
         message.setBorder(new EmptyBorder(0, 0, 5, 0));
@@ -27,25 +30,24 @@ public class ProfilePhoto extends JPanel {
         message.setFont(new Font("Times New Roman", Font.BOLD, 12));
 
         username = new JLabel("", SwingConstants.CENTER);
-        username.setPreferredSize(new Dimension(200,20));
-        username.setForeground(new Color(200,170,100));
-        username.setFont(new Font("Times New Roman", Font.BOLD, 16));
+        username.setPreferredSize(new Dimension(200, 20));
+        username.setForeground(new Color(200, 170, 100));
+        username.setFont(new Font("Times New Roman", Font.BOLD, 20));
+        username.setLayout(new BorderLayout());
 
-        roundLabel.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                roundLabel.add(message, BorderLayout.SOUTH);
-                roundLabel.updateUI();
-            }
+        JLabel lineLabel = new JLabel();
+        lineLabel.setOpaque(true);
+        lineLabel.setPreferredSize(new Dimension(150, 2));
+        lineLabel.setBackground(new Color(200, 170, 100));
 
-            @Override
-            public void mouseExited(MouseEvent e) {
-                roundLabel.remove(message);
-                roundLabel.updateUI();
-            }
-        });
-        this.setPreferredSize(new Dimension(150,200));
+        this.setPreferredSize(new Dimension(150, 200));
         this.add(roundLabel);
         this.add(username);
+        this.add(lineLabel);
     }
+
+    public void setUsername(String username) {
+        this.username.setText(username);
+    }
+
 }

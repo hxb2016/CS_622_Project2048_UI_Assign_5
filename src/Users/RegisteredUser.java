@@ -11,6 +11,8 @@ public class RegisteredUser extends User {
     public Block[][] bestBlocksArrayData = null;
     public int bestTakeTime = 0;
 
+    public String photoName = "";
+
 
     public RegisteredUser(String name, char[] password, int age, String gender) {
         super(name, password, age, gender);

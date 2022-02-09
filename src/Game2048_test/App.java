@@ -1,10 +1,10 @@
 package Game2048_test;
 
 import LoginUI.LoginUI;
-import LoginUI.LoginUIController;
 import IO.GetUsersData;
 import MainUI.MainUI;
 import MainUI.MainUIController;
+import ProfileUI.ProfileUI;
 import Users.User;
 
 import javax.swing.*;
@@ -20,6 +20,8 @@ import java.util.Map;
  * it will judge that you win.
  */
 public class App {
+    public static String photosLocation = "src" + File.separator + "Image" + File.separator + "Photos" + File.separator;
+    public static String iconsLocation = "src" + File.separator + "Image" + File.separator;
     public static User currentUser = null;
     public final static int interfaceSize = 4;// Purpose of this parameter is to decide the blockArray's size
     public final static int WinNum = 16;// You will win the game, if there is any number larger than WinNum
@@ -27,6 +29,7 @@ public class App {
     public static String userDataPath = "src" + File.separator + "UserData" + File.separator + "Data.dat";
     public static LoginUI loginUI = null;
     public static MainUI mainUI = null;
+    public static ProfileUI profileUI = null;
     public static boolean ifEnd = false;// Judge that the game end or not
 
     public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
@@ -40,12 +43,12 @@ public class App {
             e.printStackTrace();
         }
 
-        mainUI = new MainUI();//init JFrame
+        mainUI = new MainUI();//init main UI
         MainUIController.setUIController();
 
-        loginUI = new LoginUI(mainUI);
-        LoginUIController.setController();
-        loginUI.setVisible(true);
+        loginUI = LoginUI.getLoginUI(mainUI);//init login UI
+
+        profileUI = new ProfileUI(mainUI);//init profile UI
     }
 
 }

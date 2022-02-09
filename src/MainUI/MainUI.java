@@ -1,6 +1,7 @@
 package MainUI;
 
 import Game2048_test.App;
+import ProfileUI.ProfilePhoto;
 import Users.RegisteredUser;
 
 import javax.swing.*;
@@ -24,6 +25,7 @@ public class MainUI extends JFrame {
     public JLabel bestTitleLabel = new JLabel("best Record: Taken ...s", SwingConstants.CENTER);
     public MainUIBlockLabel[][] bestBlockArray = new MainUIBlockLabel[App.interfaceSize][App.interfaceSize];
     public JPanel bestRecord = new MainUIBlocksArrayPane(bestBlockArray, 10, 2);
+    public ProfilePhoto profilePhoto = new ProfilePhoto(App.currentUser);
     public GameTimerPane timerPane = new GameTimerPane();
     public UsersScrollPane usersScrollPane = UsersScrollPane.getUsersScrollPane(App.usersData);
 
@@ -37,7 +39,7 @@ public class MainUI extends JFrame {
      * the purpose of this method is to init JFrame
      */
     public MainUI() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        ImageIcon logo = new ImageIcon("src" + File.separator + "Image" + File.separator + "2048.png");//get logo image
+        ImageIcon logo = new ImageIcon(App.iconsLocation + "2048.png");//get logo image
         this.setTitle("CS_622_Game_2048");
         this.setIconImage(logo.getImage());//set logo image
         this.setSize(720, 720);
@@ -65,8 +67,13 @@ public class MainUI extends JFrame {
         this.bestTitleLabel.setForeground(new Color(18, 150, 219));
         bestRecordOutPane.add(this.bestTitleLabel, BorderLayout.NORTH);
         bestRecordOutPane.add(this.bestRecord, BorderLayout.CENTER);
+
+        JPanel timerAndPhotoPane = new JPanel();
+        timerAndPhotoPane.setLayout(new BorderLayout());
+        timerAndPhotoPane.add(profilePhoto, BorderLayout.CENTER);
+        timerAndPhotoPane.add(timerPane, BorderLayout.SOUTH);
 //////////////////////////////////////////////////////////////////////////////////////////////
-        this.recordPane.add(timerPane);
+        this.recordPane.add(timerAndPhotoPane);
         this.recordPane.add(bestRecordOutPane);
         this.recordPane.add(lastRecordOutPane);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -79,10 +86,10 @@ public class MainUI extends JFrame {
         JPanel operationButtonArea = new JPanel();
         operationButtonArea.setBorder(new EmptyBorder(0, 0, 10, 0));
         operationButtonArea.setLayout(new GridLayout(2, 1));
-        ImageIcon upArrow = new ImageIcon("src" + File.separator + "Image" + File.separator + "upArrow.png");
-        ImageIcon leftArrow = new ImageIcon("src" + File.separator + "Image" + File.separator + "leftArrow.png");
-        ImageIcon downArrow = new ImageIcon("src" + File.separator + "Image" + File.separator + "downArrow.png");
-        ImageIcon rightArrow = new ImageIcon("src" + File.separator + "Image" + File.separator + "rightArrow.png");
+        ImageIcon upArrow = new ImageIcon(App.iconsLocation + "upArrow.png");
+        ImageIcon leftArrow = new ImageIcon(App.iconsLocation + "leftArrow.png");
+        ImageIcon downArrow = new ImageIcon(App.iconsLocation + "downArrow.png");
+        ImageIcon rightArrow = new ImageIcon(App.iconsLocation + "rightArrow.png");
         this.up = new MainUIButton(null, upArrow);
         JPanel upPane = new JPanel();
         upPane.add(this.up);

@@ -2,11 +2,16 @@ package MainUI;
 
 import Game2048_test.App;
 import Operation.Operate;
+import ProfileUI.ProfileUIContent;
 import Tool.CreateBlockArrayData;
 import Tool.UpdateTimerPane;
+import Users.UnRegisteredUser;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * purpose of this class is to set action listener of buttons in MainUI
@@ -15,6 +20,7 @@ public class MainUIController {
     /**
      * purpose of the method is to set action listener of buttons in MainUI
      */
+
     public static void setUIController() {
         // set action listener for up button in MainUI
         App.mainUI.up.addActionListener(new ActionListener() {
@@ -80,12 +86,40 @@ public class MainUIController {
                     CreateBlockArrayData.creatBlockArrayData(App.interfaceSize, App.currentUser);//init current user's block array data
                     MainUIBlocksArrayPaneUpdate.updateUI(App.mainUI.blocksArray, App.currentUser.currentBlocksArrayData, App.mainUI.blocksArrayPane);//update UI
                     UpdateTimerPane.endTimer();
-                    App.mainUI.timerPane.setSecond("0");
+                    App.mainUI.timerPane.setSecond("0 s");
                     Operate.ifStartOperate = false;
                     App.ifEnd = false;
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
+            }
+
+        });
+
+        // set action listener for profilePhoto label in MainUI
+        App.mainUI.profilePhoto.roundLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (App.currentUser instanceof UnRegisteredUser) {
+                    App.loginUI.setVisible(true);
+                } else {
+                    App.profileUI.setVisible(!App.profileUI.isVisible());
+                    ProfileUIContent.setProfileUIContent(App.currentUser);
+                }
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                App.mainUI.profilePhoto.message.setText("Profile");
+                App.mainUI.profilePhoto.roundLabel.add(App.mainUI.profilePhoto.message, BorderLayout.SOUTH);
+                App.mainUI.profilePhoto.roundLabel.updateUI();
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                App.mainUI.profilePhoto.roundLabel.remove(App.mainUI.profilePhoto.message);
+                App.mainUI.profilePhoto.roundLabel.updateUI();
             }
 
         });
