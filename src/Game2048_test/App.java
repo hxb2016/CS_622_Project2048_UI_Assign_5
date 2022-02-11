@@ -3,11 +3,9 @@ package Game2048_test;
 import LoginUI.LoginUI;
 import IO.GetUsersData;
 import MainUI.MainUI;
-import MainUI.MainUIController;
 import ProfileUI.ProfileUI;
 import Users.User;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -27,12 +25,12 @@ public class App {
     public final static int WinNum = 16;// You will win the game, if there is any number larger than WinNum
     public static Map<String, User> usersData = null;
     public static String userDataPath = "src" + File.separator + "UserData" + File.separator + "Data.dat";
-    public static LoginUI loginUI = null;
     public static MainUI mainUI = null;
+    public static LoginUI loginUI = null;
     public static ProfileUI profileUI = null;
     public static boolean ifEnd = false;// Judge that the game end or not
 
-    public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public static void main(String[] args) {
         try {
             usersData = GetUsersData.getUsersData(userDataPath);//Get users' data
             if (usersData == null) {
@@ -43,8 +41,7 @@ public class App {
             e.printStackTrace();
         }
 
-        mainUI = new MainUI();//init main UI
-        MainUIController.setUIController();
+        mainUI = MainUI.getMainUI();//init main UI
 
         loginUI = LoginUI.getLoginUI(mainUI);//init login UI
 

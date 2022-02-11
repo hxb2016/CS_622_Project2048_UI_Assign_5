@@ -8,7 +8,6 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
 
 /**
  * purpose of this class is to create the MainUI
@@ -35,10 +34,12 @@ public class MainUI extends JFrame {
     public JButton right = null;
     public JButton newGame = null;
 
+    private static MainUI mainUI;
+
     /**
      * the purpose of this method is to init JFrame
      */
-    public MainUI() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    private MainUI() {
         ImageIcon logo = new ImageIcon(App.iconsLocation + "2048.png");//get logo image
         this.setTitle("CS_622_Game_2048");
         this.setIconImage(logo.getImage());//set logo image
@@ -130,6 +131,17 @@ public class MainUI extends JFrame {
         this.lastTitleLabel.setText("Last Record: Taken " + ((RegisteredUser) App.currentUser).lastTakeTime + "s");
         MainUIBlocksArrayPaneUpdate.updateUI(this.bestBlockArray, ((RegisteredUser) App.currentUser).bestBlocksArrayData, this.bestRecord);
         this.bestTitleLabel.setText("Best Record: Taken " + ((RegisteredUser) App.currentUser).bestTakeTime + "s");
+    }
+
+    /**
+     * Purpose of this method is to return a single mainUI
+     */
+    public static MainUI getMainUI() {
+        if (mainUI == null) {
+            mainUI = new MainUI();
+            MainUIController.setUIController(mainUI);
+        }
+        return mainUI;
     }
 
 

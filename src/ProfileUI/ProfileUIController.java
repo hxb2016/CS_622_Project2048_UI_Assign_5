@@ -14,7 +14,13 @@ import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Purpose of the class is to set listener for profile interface
+ */
 public class ProfileUIController {
+    /**
+     * Purpose of the method is to set listener for profile interface
+     */
     public static void setController(ProfileUIContent profileUIContent) {
         // set action listener for profilePhoto label in profileUIContent
         profileUIContent.profilePhoto.roundLabel.addMouseListener(new MouseAdapter() {
@@ -80,9 +86,9 @@ public class ProfileUIController {
                     profileUIContent.gender.setEditable(true);
                     profileUIContent.introduction.setEditable(true);
                 } else {
-                    if(profileUIContent.username.getText().trim().equals("") || profileUIContent.password.getPassword().length==0){
-                        OptionPane.setJOptionPaneMessage(App.mainUI,"Username and password can't be empty","Message",null);
-                    }else{
+                    if (profileUIContent.username.getText().trim().equals("") || profileUIContent.password.getPassword().length == 0) {
+                        OptionPane.setJOptionPaneMessage(App.mainUI, "Username and password can't be empty", "Message", null);
+                    } else {
                         App.usersData.remove(App.currentUser.username);
                         App.currentUser.username = profileUIContent.username.getText();
                         App.currentUser.password = profileUIContent.password.getPassword();

@@ -21,9 +21,9 @@ public class MainUIController {
      * purpose of the method is to set action listener of buttons in MainUI
      */
 
-    public static void setUIController() {
+    public static void setUIController(MainUI mainUI) {
         // set action listener for up button in MainUI
-        App.mainUI.up.addActionListener(new ActionListener() {
+        mainUI.up.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -37,7 +37,7 @@ public class MainUIController {
         });
 
         // set action listener for left button in MainUI
-        App.mainUI.left.addActionListener(new ActionListener() {
+        mainUI.left.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -51,7 +51,7 @@ public class MainUIController {
         });
 
         // set action listener for down button in MainUI
-        App.mainUI.down.addActionListener(new ActionListener() {
+        mainUI.down.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -65,7 +65,7 @@ public class MainUIController {
         });
 
         // set action listener for right button in MainUI
-        App.mainUI.right.addActionListener(new ActionListener() {
+        mainUI.right.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
@@ -79,14 +79,14 @@ public class MainUIController {
         });
 
         // set action listener for New Game button in MainUI
-        App.mainUI.newGame.addActionListener(new ActionListener() {
+        mainUI.newGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
                     CreateBlockArrayData.creatBlockArrayData(App.interfaceSize, App.currentUser);//init current user's block array data
-                    MainUIBlocksArrayPaneUpdate.updateUI(App.mainUI.blocksArray, App.currentUser.currentBlocksArrayData, App.mainUI.blocksArrayPane);//update UI
+                    MainUIBlocksArrayPaneUpdate.updateUI(mainUI.blocksArray, App.currentUser.currentBlocksArrayData, mainUI.blocksArrayPane);//update UI
                     UpdateTimerPane.endTimer();
-                    App.mainUI.timerPane.setSecond("0 s");
+                    mainUI.timerPane.setSecond("0 s");
                     Operate.ifStartOperate = false;
                     App.ifEnd = false;
                 } catch (Exception ex) {
@@ -97,7 +97,7 @@ public class MainUIController {
         });
 
         // set action listener for profilePhoto label in MainUI
-        App.mainUI.profilePhoto.roundLabel.addMouseListener(new MouseAdapter() {
+        mainUI.profilePhoto.roundLabel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (App.currentUser instanceof UnRegisteredUser) {
@@ -111,15 +111,15 @@ public class MainUIController {
 
             @Override
             public void mouseEntered(MouseEvent e) {
-                App.mainUI.profilePhoto.message.setText("Profile");
-                App.mainUI.profilePhoto.roundLabel.add(App.mainUI.profilePhoto.message, BorderLayout.SOUTH);
-                App.mainUI.profilePhoto.roundLabel.updateUI();
+                mainUI.profilePhoto.message.setText("Profile");
+                mainUI.profilePhoto.roundLabel.add(mainUI.profilePhoto.message, BorderLayout.SOUTH);
+                mainUI.profilePhoto.roundLabel.updateUI();
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                App.mainUI.profilePhoto.roundLabel.remove(App.mainUI.profilePhoto.message);
-                App.mainUI.profilePhoto.roundLabel.updateUI();
+                mainUI.profilePhoto.roundLabel.remove(mainUI.profilePhoto.message);
+                mainUI.profilePhoto.roundLabel.updateUI();
             }
 
         });

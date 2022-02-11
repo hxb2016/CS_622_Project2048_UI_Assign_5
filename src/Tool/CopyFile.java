@@ -6,6 +6,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
+/**
+ * Purpose of the class is to copy file from one place to another
+ */
 public class CopyFile {
     public static void copyFile(String oldPath) {
         int dotLocation = oldPath.lastIndexOf(".");

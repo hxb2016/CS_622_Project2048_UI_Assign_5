@@ -9,7 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * purpose of this class is to create a login ui interface
+ * purpose of this class is to create a component panel for profile interface
  */
 public class ProfileUIContent extends JPanel {
 
@@ -78,6 +78,9 @@ public class ProfileUIContent extends JPanel {
         this.add(bottomPanel, BorderLayout.CENTER);
     }
 
+    /**
+     * purpose of this method is to make sure that there is always one component
+     */
     public static void setProfileUIContent(User user) {
         if (profileUIContent == null) {
             profileUIContent = new ProfileUIContent(user);

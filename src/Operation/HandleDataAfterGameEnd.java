@@ -10,10 +10,13 @@ import Users.User;
 import javax.swing.*;
 import java.util.HashMap;
 
-public class EndOrWinThread extends Thread {
+/**
+ * purpose of this class is to create a HandleDataAfterGameEnd thread
+ */
+public class HandleDataAfterGameEnd extends Thread {
     private final User user;
 
-    public EndOrWinThread(User user) {
+    public HandleDataAfterGameEnd(User user) {
         this.user = user;
     }
 

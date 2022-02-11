@@ -91,6 +91,9 @@ public class LoginUI extends JDialog {
         this.add(this.informationArea, BorderLayout.CENTER);
     }
 
+    /**
+     * purpose of this method is to return a single loginUI
+     */
     public static LoginUI getLoginUI(Frame owner) {
         if (loginUI == null) {
             loginUI = new LoginUI(owner);

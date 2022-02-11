@@ -18,34 +18,36 @@ public class Operate {
      * The purpose of operation method is to deal with moving and combining of block, when the game system receive a command
      */
     public static void operation(int code, User currentUser) {
-        if (code == 27) {
-            System.exit(0);
-        }
-        if (!App.ifEnd) {
-            if (!ifStartOperate) {
-                UpdateTimerPane.startTimer();
-                ifStartOperate = true;
-            }
-            if (code == 37 || code == 38) {
-                for (int i = 0; i < currentUser.currentBlocksArrayData.length; i++) {
-                    for (int j = 0; j < currentUser.currentBlocksArrayData[i].length; j++) {
-                        switch (code) {
-                            case 38 -> moveUp(currentUser.currentBlocksArrayData[i][j], currentUser);
-                            case 37 -> moveLeft(currentUser.currentBlocksArrayData[i][j], currentUser);
-                        }
-                    }
-                }
-            } else {
-                for (int i = currentUser.currentBlocksArrayData.length - 1; i >= 0; i--) {
-                    for (int j = currentUser.currentBlocksArrayData[i].length - 1; j >= 0; j--) {
-                        switch (code) {
-                            case 40 -> moveDown(currentUser.currentBlocksArrayData[i][j], currentUser);
-                            case 39 -> moveRight(currentUser.currentBlocksArrayData[i][j], currentUser);
-                        }
-                    }
 
+        if (!App.ifEnd) {
+            if (code == 37 || code == 38 ||code == 39 || code == 40){
+                if (!ifStartOperate) {
+                    UpdateTimerPane.startTimer();
+                    ifStartOperate = true;
+                }
+
+                if (code == 37 || code == 38) {
+                    for (int i = 0; i < currentUser.currentBlocksArrayData.length; i++) {
+                        for (int j = 0; j < currentUser.currentBlocksArrayData[i].length; j++) {
+                            switch (code) {
+                                case 38 -> moveUp(currentUser.currentBlocksArrayData[i][j], currentUser);
+                                case 37 -> moveLeft(currentUser.currentBlocksArrayData[i][j], currentUser);
+                            }
+                        }
+                    }
+                } else {
+                    for (int i = currentUser.currentBlocksArrayData.length - 1; i >= 0; i--) {
+                        for (int j = currentUser.currentBlocksArrayData[i].length - 1; j >= 0; j--) {
+                            switch (code) {
+                                case 40 -> moveDown(currentUser.currentBlocksArrayData[i][j], currentUser);
+                                case 39 -> moveRight(currentUser.currentBlocksArrayData[i][j], currentUser);
+                            }
+                        }
+
+                    }
                 }
             }
+
 
             if (ifMoving) {//it will generate a random block, if any block move
                 Block randomBlock = new RandomBlock(currentUser);
@@ -58,8 +60,8 @@ public class Operate {
         }
 
         // Create a thread to deal with data after end or win
-        Thread endOrWin = new EndOrWinThread(currentUser);
         if (App.ifEnd) {//if end
+            Thread endOrWin = new HandleDataAfterGameEnd(currentUser);
             endOrWin.start();//Thread start
         }
 

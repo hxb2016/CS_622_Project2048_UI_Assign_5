@@ -8,8 +8,10 @@ import Users.User;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.io.File;
 
+/**
+ * Purpose of this class is to create a profile photo panel
+ */
 public class ProfilePhoto extends JPanel {
     public RoundLabel roundLabel;
     public JLabel username;
@@ -46,6 +48,9 @@ public class ProfilePhoto extends JPanel {
         this.add(lineLabel);
     }
 
+    /**
+     * Purpose of the method is to set username into username box
+     */
     public void setUsername(String username) {
         this.username.setText(username);
     }

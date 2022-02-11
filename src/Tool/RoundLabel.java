@@ -6,6 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
 
+/**
+ * Purpose of the class is to creat a round label to contain profile photo
+ */
 public class RoundLabel extends JLabel {
     public static int photoSize = 128;
 
