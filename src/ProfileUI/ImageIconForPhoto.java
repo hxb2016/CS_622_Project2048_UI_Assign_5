@@ -6,13 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * This class contain some methods to handle profile photo
+ * Purpose of this class is to create an image object for interface
  */
 public class ImageIconForPhoto extends ImageIcon {
 
-    /**
-     * Purpose of the method is to handle profile photo size
-     */
     public ImageIconForPhoto(String path) {
         super(path);
         if (this.getIconWidth() < this.getIconHeight()) {
