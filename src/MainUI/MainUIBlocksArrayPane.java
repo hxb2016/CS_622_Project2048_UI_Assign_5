@@ -1,12 +1,16 @@
-package MainUI;
+package mainui;
 
-import Game2048_test.App;
+import game2048_test.App;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 /**
  * the purpose of this class is to create a blocksArrayPane
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class MainUIBlocksArrayPane extends JPanel {
     public MainUIBlocksArrayPane(JLabel[][] buttonList, int textSize, int gap) {

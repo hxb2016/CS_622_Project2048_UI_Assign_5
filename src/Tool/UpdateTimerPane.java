@@ -1,12 +1,16 @@
-package Tool;
+package tool;
 
-import Game2048_test.App;
+import game2048_test.App;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 /**
  * purpose of this class is to update timer pane
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class UpdateTimerPane {
     private static int second = 0;

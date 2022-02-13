@@ -1,10 +1,14 @@
-package MainUI;
+package mainui;
 
-import Block.Block;
+import block.Block;
 
 import javax.swing.*;
 /**
  * the purpose of this class is to update blocksArrayPane
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class MainUIBlocksArrayPaneUpdate {
     /**

@@ -1,8 +1,16 @@
-package Users;
+package test;
 
 import org.junit.Assert;
 import org.junit.Test;
-
+import users.UnRegisteredUser;
+import users.User;
+/**
+ * Purpose of the class is to test some methods in UnRegisteredUser class
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
+ */
 public class UnRegisteredUserTest {
     static User user = new UnRegisteredUser("Xiaobing");
 

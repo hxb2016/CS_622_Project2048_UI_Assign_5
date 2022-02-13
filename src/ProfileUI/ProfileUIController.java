@@ -1,11 +1,11 @@
-package ProfileUI;
+package profileui;
 
-import Game2048_test.App;
-import IO.SaveUsersData;
-import Tool.CopyFile;
-import Tool.FileChooserForPhoto;
-import Tool.OptionPane;
-import Users.RegisteredUser;
+import game2048_test.App;
+import io.SaveUsersData;
+import tool.CopyFile;
+import tool.FileChooserForPhoto;
+import tool.OptionPane;
+import users.RegisteredUser;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,6 +16,10 @@ import java.io.IOException;
 
 /**
  * Purpose of the class is to set listener for profile interface
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class ProfileUIController {
     /**

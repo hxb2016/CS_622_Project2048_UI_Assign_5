@@ -1,10 +1,14 @@
-package ProfileUI;
+package profileui;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
  * purpose of this class is to create text box component for typing from users
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class ProfileTextField extends JTextField {
     public ProfileTextField(String message) {

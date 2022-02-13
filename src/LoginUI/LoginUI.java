@@ -1,6 +1,6 @@
-package LoginUI;
+package loginui;
 
-import Game2048_test.App;
+import game2048_test.App;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,6 +10,10 @@ import java.io.File;
 
 /**
  * purpose of this class is to create a login ui interface
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class LoginUI extends JDialog {
     public JTextField userNameBox;
@@ -30,8 +34,8 @@ public class LoginUI extends JDialog {
     private LoginUI(Frame owner) {
         super(owner);
         this.setResizable(false);
-        this.setTitle("LoginUI");
-        ImageIcon logo = new ImageIcon("src" + File.separator + "Image" + File.separator + "2048.png");
+        this.setTitle("loginui");
+        ImageIcon logo = new ImageIcon("src" + File.separator + "image" + File.separator + "2048.png");
         this.setIconImage(logo.getImage());
         this.setLayout(new BorderLayout());
         this.setSize(300, 400); // 设置大小

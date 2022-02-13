@@ -1,9 +1,13 @@
-package LoginUI;
+package loginui;
 
 import javax.swing.*;
 import java.awt.*;
 /**
  * purpose of this class is to create text box component for typing from users
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class LoginUITextField extends JTextField {
     public LoginUITextField() {

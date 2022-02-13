@@ -1,15 +1,19 @@
-package ProfileUI;
+package profileui;
 
-import Game2048_test.App;
-import LoginUI.LoginUIButton;
-import LoginUI.LoginUILabel;
-import Users.User;
+import game2048_test.App;
+import loginui.LoginUIButton;
+import loginui.LoginUILabel;
+import users.User;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
  * purpose of this class is to create a component panel for profile interface
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class ProfileUIContent extends JPanel {
 

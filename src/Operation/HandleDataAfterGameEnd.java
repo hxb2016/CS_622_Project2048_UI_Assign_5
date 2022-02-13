@@ -1,17 +1,21 @@
-package Operation;
+package operation;
 
-import Game2048_test.App;
-import IO.SaveUsersData;
-import Tool.OptionPane;
-import Tool.UpdateTimerPane;
-import Users.RegisteredUser;
-import Users.User;
+import game2048_test.App;
+import io.SaveUsersData;
+import tool.OptionPane;
+import tool.UpdateTimerPane;
+import users.RegisteredUser;
+import users.User;
 
 import javax.swing.*;
 import java.util.HashMap;
 
 /**
  * purpose of this class is to create a HandleDataAfterGameEnd thread
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class HandleDataAfterGameEnd extends Thread {
     private final User user;

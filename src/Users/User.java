@@ -1,11 +1,15 @@
-package Users;
+package users;
 
-import Block.Block;
+import block.Block;
 
 import java.io.Serializable;
 
 /**
  * This class is an abstract class
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public abstract class User implements Serializable {
     public static final long serialVersionUID = 1L;

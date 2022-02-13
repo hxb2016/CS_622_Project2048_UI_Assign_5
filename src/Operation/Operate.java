@@ -1,14 +1,18 @@
-package Operation;
+package operation;
 
-import Block.Block;
-import Block.RandomBlock;
-import Game2048_test.App;
-import MainUI.MainUIBlocksArrayPaneUpdate;
-import Tool.UpdateTimerPane;
-import Users.User;
+import block.Block;
+import block.RandomBlock;
+import game2048_test.App;
+import mainui.MainUIBlocksArrayPaneUpdate;
+import tool.UpdateTimerPane;
+import users.User;
 
 /**
  * The purpose of this class is to deal with moving and combining of block, when the game system receive a command
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class Operate {
     public static boolean ifMoving = false;

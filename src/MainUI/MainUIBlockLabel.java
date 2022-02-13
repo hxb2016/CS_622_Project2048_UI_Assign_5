@@ -1,6 +1,6 @@
-package MainUI;
+package mainui;
 
-import Tool.KeyBoardListener;
+import tool.KeyBoardListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,6 +8,10 @@ import java.awt.geom.RoundRectangle2D;
 
 /**
  * purpose of this class is to create single label by given round size and text size
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class MainUIBlockLabel extends JLabel {
 

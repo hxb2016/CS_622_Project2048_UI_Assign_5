@@ -1,10 +1,10 @@
-package Game2048_test;
+package game2048_test;
 
-import LoginUI.LoginUI;
-import IO.GetUsersData;
-import MainUI.MainUI;
-import ProfileUI.ProfileUI;
-import Users.User;
+import loginui.LoginUI;
+import io.GetUsersData;
+import mainui.MainUI;
+import profileui.ProfileUI;
+import users.User;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,15 +16,19 @@ import java.util.Map;
  * Notes: In order to save time for test, I change the win number from 2048 to 16 (WinNum = 16).
  * Because it will very long time if the number is too large. which means that any number is larger than 16,
  * it will judge that you win.
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class App {
-    public static String photosLocation = "src" + File.separator + "Image" + File.separator + "Photos" + File.separator;
-    public static String iconsLocation = "src" + File.separator + "Image" + File.separator;
+    public static String photosLocation = "src" + File.separator + "image" + File.separator + "photos" + File.separator;
+    public static String iconsLocation = "src" + File.separator + "image" + File.separator;
     public static User currentUser = null;
     public final static int interfaceSize = 4;// Purpose of this parameter is to decide the blockArray's size
     public final static int WinNum = 16;// You will win the game, if there is any number larger than WinNum
     public static Map<String, User> usersData = null;
-    public static String userDataPath = "src" + File.separator + "UserData" + File.separator + "Data.dat";
+    public static String userDataPath = "src" + File.separator + "userdata" + File.separator + "Data.dat";
     public static MainUI mainUI = null;
     public static LoginUI loginUI = null;
     public static ProfileUI profileUI = null;

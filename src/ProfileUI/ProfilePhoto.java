@@ -1,9 +1,9 @@
-package ProfileUI;
+package profileui;
 
-import Game2048_test.App;
-import Tool.RoundLabel;
-import Users.RegisteredUser;
-import Users.User;
+import game2048_test.App;
+import tool.RoundLabel;
+import users.RegisteredUser;
+import users.User;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -11,6 +11,10 @@ import java.awt.*;
 
 /**
  * Purpose of this class is to create a profile photo panel
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class ProfilePhoto extends JPanel {
     public RoundLabel roundLabel;

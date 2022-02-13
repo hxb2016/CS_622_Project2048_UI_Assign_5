@@ -1,13 +1,13 @@
-package LoginUI;
+package loginui;
 
-import Game2048_test.App;
-import IO.SaveUsersData;
-import ProfileUI.ImageIconForPhoto;
-import Tool.OptionPane;
-import Tool.CreateBlockArrayData;
-import MainUI.MainUIBlocksArrayPaneUpdate;
-import Users.RegisteredUser;
-import Users.UnRegisteredUser;
+import game2048_test.App;
+import io.SaveUsersData;
+import profileui.ImageIconForPhoto;
+import tool.OptionPane;
+import tool.CreateBlockArrayData;
+import mainui.MainUIBlocksArrayPaneUpdate;
+import users.RegisteredUser;
+import users.UnRegisteredUser;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,6 +16,10 @@ import java.util.Arrays;
 
 /**
  * purpose of this class is to set action listener of buttons in LoginUI
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class LoginUIController {
     public static void setController(LoginUI loginUI) {

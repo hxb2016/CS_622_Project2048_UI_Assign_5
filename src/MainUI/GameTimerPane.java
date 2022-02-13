@@ -1,10 +1,14 @@
-package MainUI;
+package mainui;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
  * Purpose of this class is to create a timer pane
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class GameTimerPane extends JPanel {
     private final JLabel second = new JLabel("0 s", SwingConstants.CENTER);

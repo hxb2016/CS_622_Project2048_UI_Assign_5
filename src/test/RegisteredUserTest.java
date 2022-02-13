@@ -1,9 +1,17 @@
-package Users;
+package test;
 
-import Block.Block;
+import block.Block;
 import org.junit.Assert;
 import org.junit.Test;
-
+import users.RegisteredUser;
+import users.User;
+/**
+ * Purpose of the class is to test some methods in RegisteredUser class
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
+ */
 public class RegisteredUserTest {
     static User user = new RegisteredUser("Xiaobing","123456".toCharArray(), 30, "Male");
 

@@ -1,8 +1,8 @@
-package MainUI;
+package mainui;
 
-import Game2048_test.App;
-import ProfileUI.ProfilePhoto;
-import Users.RegisteredUser;
+import game2048_test.App;
+import profileui.ProfilePhoto;
+import users.RegisteredUser;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -11,6 +11,10 @@ import java.awt.event.*;
 
 /**
  * purpose of this class is to create the MainUI
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class MainUI extends JFrame {
     public MainUIBlockLabel[][] blocksArray = new MainUIBlockLabel[App.interfaceSize][App.interfaceSize];

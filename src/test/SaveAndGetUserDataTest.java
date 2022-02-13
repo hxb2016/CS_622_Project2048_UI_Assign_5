@@ -1,7 +1,9 @@
-package IO;
+package test;
 
-import Users.RegisteredUser;
-import Users.User;
+import io.GetUsersData;
+import io.SaveUsersData;
+import users.RegisteredUser;
+import users.User;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,9 +14,13 @@ import java.util.Map;
 
 /**
  * Because you need save data first, and then you can get it, I combine the two test
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class SaveAndGetUserDataTest {
-    static String userDataPath = "src" + File.separator + "UserData" + File.separator + "DataTest.dat";
+    static String userDataPath = "src" + File.separator + "userdata" + File.separator + "DataTest.dat";
 
     @Test
     public void saveAndGetUsersDataTest() throws IOException, ClassNotFoundException {

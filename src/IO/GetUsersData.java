@@ -1,4 +1,4 @@
-package IO;
+package io;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -6,7 +6,11 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 
 /**
- * The purpose of this class is to get data from local file (Data.txt)
+ * The purpose of this class is to get data from local file (Data.dat)
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class GetUsersData {
     /**

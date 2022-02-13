@@ -1,12 +1,16 @@
-package Tool;
+package tool;
 
-import Block.Block;
+import block.Block;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Purpose of this class is to get empty block locations of current blocksArray
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class GetEmptyBlockLocation {
     /**

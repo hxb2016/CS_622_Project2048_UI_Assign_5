@@ -1,6 +1,6 @@
-package Tool;
+package tool;
 
-import Game2048_test.App;
+import game2048_test.App;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,6 +8,10 @@ import java.nio.file.Files;
 
 /**
  * Purpose of the class is to copy file from one place to another
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class CopyFile {
     public static void copyFile(String oldPath) {

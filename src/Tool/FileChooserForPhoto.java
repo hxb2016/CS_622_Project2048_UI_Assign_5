@@ -1,4 +1,4 @@
-package Tool;
+package tool;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
@@ -7,6 +7,10 @@ import java.io.File;
 
 /**
  * Purpose of this class is to return a FileChooser for profile interface
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class FileChooserForPhoto {
     public static JFileChooser getFileChooser() {

@@ -1,12 +1,16 @@
-package MainUI;
+package mainui;
 
-import Tool.KeyBoardListener;
+import tool.KeyBoardListener;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
  * the purpose of this class is to create a button for MainUI
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class MainUIButton extends JButton {
     public MainUIButton(String text, ImageIcon icon) {

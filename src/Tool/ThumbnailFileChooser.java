@@ -1,4 +1,4 @@
-package Tool;
+package tool;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileView;
@@ -13,6 +13,10 @@ import java.util.regex.Pattern;
 
 /**
  * Purpose of this class is to make sure that user can see icon of picture in file chooser interface
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class ThumbnailFileChooser extends JFileChooser {
     // All preview icons will be this width and height

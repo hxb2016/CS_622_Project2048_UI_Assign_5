@@ -1,12 +1,16 @@
-package MainUI;
+package mainui;
 
-import Users.User;
+import users.User;
 
 import javax.swing.*;
 import java.util.Map;
 
 /**
  * Purpose of this class is to create a UsersScrollPane
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class UsersScrollPane extends JScrollPane {
     public UsersTable usersTable = null;

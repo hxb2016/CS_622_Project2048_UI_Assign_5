@@ -1,7 +1,7 @@
-package Tool;
+package tool;
 
-import Game2048_test.App;
-import Operation.Operate;
+import game2048_test.App;
+import operation.Operate;
 
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -11,6 +11,10 @@ import java.awt.event.KeyEvent;
  * Purpose of this class is to return a handler for components to get keyboard action
  * In the game, you can press ⬆， ⬅， ⬇ and ➡ keys to operate the game interface, so it needs to get the keyboard's action.
  * because in the MainUI, there are different kind components, this class uses a generic class
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class KeyBoardListener<Comp extends Component> {
     Comp comp;

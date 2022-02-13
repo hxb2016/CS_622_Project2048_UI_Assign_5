@@ -1,9 +1,13 @@
-package Users;
+package users;
 
-import Block.Block;
+import block.Block;
 
 /**
  * The purpose of this class is to create a registered user by given username, age and gender
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class RegisteredUser extends User {
     public Block[][] lastBlocksArrayData;

@@ -1,6 +1,6 @@
-package Tool;
+package tool;
 
-import ProfileUI.ImageIconForPhoto;
+import profileui.ImageIconForPhoto;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,6 +8,10 @@ import java.awt.geom.RoundRectangle2D;
 
 /**
  * Purpose of the class is to creat a round label to contain profile photo
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class RoundLabel extends JLabel {
     public static int photoSize = 128;

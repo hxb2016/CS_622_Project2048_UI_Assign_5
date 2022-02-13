@@ -1,8 +1,8 @@
-package MainUI;
+package mainui;
 
-import Game2048_test.App;
-import Users.RegisteredUser;
-import Users.User;
+import game2048_test.App;
+import users.RegisteredUser;
+import users.User;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -14,6 +14,10 @@ import java.util.stream.Collectors;
 
 /**
  * purpose of this class is to create a table which includes usernames and whose best record's taken time
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class UsersTable extends JTable {
     private final String[] title = new String[]{"Username", "Best record"};

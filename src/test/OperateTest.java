@@ -1,13 +1,20 @@
-package Operation;
+package test;
 
-import Block.Block;
-import Game2048_test.App;
-import Users.RegisteredUser;
-import Users.User;
+import block.Block;
+import game2048_test.App;
+import operation.Operate;
+import users.RegisteredUser;
+import users.User;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
+/**
+ * Purpose of the class is to test some methods in Operate class
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
+ */
 public class OperateTest {
 
     @Test

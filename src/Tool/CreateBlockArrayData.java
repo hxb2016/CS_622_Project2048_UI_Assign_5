@@ -1,10 +1,14 @@
-package Tool;
+package tool;
 
-import Block.*;
-import Users.User;
+import block.*;
+import users.User;
 
 /**
  * Purpose of this class is to set a blockArray to currentBlocksArrayData of current user
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class CreateBlockArrayData {
     /**

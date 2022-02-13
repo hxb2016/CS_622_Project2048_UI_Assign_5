@@ -1,11 +1,11 @@
-package MainUI;
+package mainui;
 
-import Game2048_test.App;
-import Operation.Operate;
-import ProfileUI.ProfileUIContent;
-import Tool.CreateBlockArrayData;
-import Tool.UpdateTimerPane;
-import Users.UnRegisteredUser;
+import game2048_test.App;
+import operation.Operate;
+import profileui.ProfileUIContent;
+import tool.CreateBlockArrayData;
+import tool.UpdateTimerPane;
+import users.UnRegisteredUser;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,6 +15,10 @@ import java.awt.event.MouseEvent;
 
 /**
  * purpose of this class is to set action listener of buttons in MainUI
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class MainUIController {
     /**

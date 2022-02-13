@@ -1,13 +1,17 @@
-package Block;
+package block;
 
-import Tool.GetEmptyBlockLocation;
-import Users.User;
+import tool.GetEmptyBlockLocation;
+import users.User;
 
 import java.util.List;
 import java.util.Random;
 
 /**
  * purpose of this class is to create a randomBlock in empty area of currentBlockArray of currentUser
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class RandomBlock extends Block {
     public RandomBlock(User user) {

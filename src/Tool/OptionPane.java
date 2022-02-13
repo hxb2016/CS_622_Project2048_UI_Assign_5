@@ -1,9 +1,13 @@
-package Tool;
+package tool;
 
 import javax.swing.*;
 
 /**
  * Purpose of this class is to show a dialog
+ *
+ * Author: Xiaobing Hou
+ * Date: 02/12/2022
+ * Course: CS-622
  */
 public class OptionPane {
     /**
