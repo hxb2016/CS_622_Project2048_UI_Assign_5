@@ -12,7 +12,7 @@ import javax.swing.*;
 import java.util.HashMap;
 
 /**
- * purpose of this class is to create a HandleDataAfterGameEnd thread
+ * Purpose of this class is to create a HandleDataAfterGameEnd thread
  *
  * Author: Xiaobing Hou
  * Date: 02/12/2022

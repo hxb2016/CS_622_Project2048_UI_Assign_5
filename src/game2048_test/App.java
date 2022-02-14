@@ -15,7 +15,7 @@ import java.util.Map;
  * Notes: In order to save time for test, I change the win number from 2048 to 16 (WinNum = 16).
  * Because it will very long time if the number is too large. which means that any number is larger than 16,
  * it will judge that you win.
- * <p>
+ *
  * Author: Xiaobing Hou
  * Date: 02/12/2022
  * Course: CS-622
