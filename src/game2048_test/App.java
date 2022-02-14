@@ -2,6 +2,8 @@ package game2048_test;
 
 import loginui.LoginUI;
 import io.GetUsersData;
+import mainui.GetDataThread;
+import mainui.GetUIThread;
 import mainui.MainUI;
 import profileui.ProfileUI;
 import users.User;
@@ -16,7 +18,7 @@ import java.util.Map;
  * Notes: In order to save time for test, I change the win number from 2048 to 16 (WinNum = 16).
  * Because it will very long time if the number is too large. which means that any number is larger than 16,
  * it will judge that you win.
- *
+ * <p>
  * Author: Xiaobing Hou
  * Date: 02/12/2022
  * Course: CS-622
@@ -35,21 +37,14 @@ public class App {
     public static boolean ifEnd = false;// Judge that the game end or not
 
     public static void main(String[] args) {
-        try {
-            usersData = GetUsersData.getUsersData(userDataPath);//Get users' data
-            if (usersData == null) {
-                usersData = new HashMap<>();
-            }
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Error happened when get data.");
-            e.printStackTrace();
-        }
 
-        mainUI = MainUI.getMainUI();//init main UI
+        GetDataThread getDataThread = new GetDataThread();
 
-        loginUI = LoginUI.getLoginUI(mainUI);//init login UI
+        GetUIThread getUIThread = new GetUIThread();
 
-        profileUI = new ProfileUI(mainUI);//init profile UI
+        getDataThread.start();
+        getUIThread.start();
+
     }
 
 }
