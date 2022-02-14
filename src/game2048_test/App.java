@@ -1,16 +1,13 @@
 package game2048_test;
 
 import loginui.LoginUI;
-import io.GetUsersData;
-import mainui.GetDataThread;
-import mainui.GetUIThread;
+import threadforgame.GetDataThread;
+import threadforgame.GetUIThread;
 import mainui.MainUI;
 import profileui.ProfileUI;
 import users.User;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 /**

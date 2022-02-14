@@ -1,12 +1,10 @@
-package mainui;
+package threadforgame;
 
 import game2048_test.App;
 import io.GetUsersData;
-import users.User;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 
 public class GetDataThread extends Thread {
 

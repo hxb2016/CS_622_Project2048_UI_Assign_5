@@ -1,7 +1,8 @@
-package operation;
+package threadforgame;
 
 import game2048_test.App;
 import io.SaveUsersData;
+import operation.Operate;
 import tool.OptionPane;
 import tool.UpdateTimerPane;
 import users.RegisteredUser;

@@ -1,7 +1,8 @@
-package mainui;
+package threadforgame;
 
 import game2048_test.App;
 import loginui.LoginUI;
+import mainui.MainUI;
 import profileui.ProfileUI;
 
 public class GetUIThread extends Thread{
