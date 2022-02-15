@@ -3,11 +3,9 @@ package threadforgame;
 import game2048_test.App;
 import io.GetUsersData;
 
-import java.io.IOException;
 import java.util.HashMap;
 /**
  * Purpose of this class is to create a GetDataThread thread for getting user data
- *
  * Author: Xiaobing Hou
  * Date: 02/12/2022
  * Course: CS-622
@@ -24,11 +22,11 @@ public class GetDataThread extends Thread {
                 if (App.usersData == null) {
                     App.usersData = new HashMap<>();
                 }
-            } catch (IOException | ClassNotFoundException e) {
+            } catch (Exception e) {
                 System.out.println("Error happened when get data.");
                 e.printStackTrace();
             }
-            notifyAll();
+            this.notifyAll();
         }
     }
 }
