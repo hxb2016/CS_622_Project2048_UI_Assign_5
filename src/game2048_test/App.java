@@ -2,10 +2,10 @@ package game2048_test;
 
 import loginui.LoginUI;
 import threadforgame.GetDataThread;
-import threadforgame.GetLoginUIAndProfileUIThread;
-import threadforgame.GetMainUIThread;
+import threadforgame.GetLoginUIThread;
 import mainui.MainUI;
 import profileui.ProfileUI;
+import threadforgame.GetProfileUIThread;
 import users.User;
 
 import java.io.File;
@@ -41,12 +41,12 @@ public class App {
             synchronized (getDataThread) {
                 getDataThread.wait();
 
-                GetMainUIThread mainUIThread = new GetMainUIThread();
-                mainUIThread.start();
-                mainUIThread.join();
+                mainUI = MainUI.getMainUI();//init main UI
 
-                GetLoginUIAndProfileUIThread loginUIAndProfileUIThread = new GetLoginUIAndProfileUIThread(mainUI);
-                loginUIAndProfileUIThread.start();
+                GetProfileUIThread profileUIThread = new GetProfileUIThread(mainUI);
+                GetLoginUIThread loginUIThread = new GetLoginUIThread(mainUI);
+                profileUIThread.start();
+                loginUIThread.start();
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
