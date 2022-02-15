@@ -34,15 +34,14 @@ public class App {
     public static ProfileUI profileUI = null;
     public static boolean ifEnd = false;// Judge that the game end or not
 
+    private final static GetDataThread getDataThread = new GetDataThread();
+
     public static void main(String[] args) {
         try {
-            GetDataThread getDataThread = new GetDataThread();
             getDataThread.start();
             synchronized (getDataThread) {
                 getDataThread.wait();
-
                 mainUI = MainUI.getMainUI();//init main UI
-
                 GetProfileUIThread profileUIThread = new GetProfileUIThread(mainUI);
                 GetLoginUIThread loginUIThread = new GetLoginUIThread(mainUI);
                 profileUIThread.start();

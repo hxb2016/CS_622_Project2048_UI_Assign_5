@@ -19,7 +19,6 @@ import java.util.HashMap;
  */
 public class HandleDataAfterGameEnd extends Thread {
     private final User user;
-
     public HandleDataAfterGameEnd(User user) {
         this.user = user;
     }
@@ -27,7 +26,6 @@ public class HandleDataAfterGameEnd extends Thread {
     @Override
     public void run() {
         UpdateTimerPane.endTimer();
-
         if (Operate.isWin(user.currentBlocksArrayData)) {
             user.currentResult = "win";
             OptionPane.setJOptionPaneMessage(App.mainUI, "YOU WIN!!!", "Congratulations", null);
@@ -35,9 +33,7 @@ public class HandleDataAfterGameEnd extends Thread {
             user.currentResult = "fail";
             OptionPane.setJOptionPaneMessage(App.mainUI, "GAME OVER!", "Sorry", null);
         }
-
         int userOption = OptionPane.setJOptionPaneConfirm(App.mainUI, "Save the result?", "Message");
-
         if (userOption == JOptionPane.YES_OPTION) {
             if (App.usersData == null) {
                 App.usersData = new HashMap<>();
@@ -49,7 +45,6 @@ public class HandleDataAfterGameEnd extends Thread {
                     SaveUsersData.saveUsersData(App.usersData, App.userDataPath);
                     App.mainUI.updateLastBestRecord();
                     App.mainUI.usersScrollPane.updateUsersTable();
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

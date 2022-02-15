@@ -18,7 +18,6 @@ public class GetLoginUIThread extends Thread {
 
     @Override
     public void run() {
-
         App.loginUI = LoginUI.getLoginUI(mainUI);//init login UI
     }
 }
